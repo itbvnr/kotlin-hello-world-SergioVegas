@@ -17,12 +17,14 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 
 @Composable
-internal fun AppButton() = AppTheme {
+internal fun AppScreen() = AppTheme {
 
     Box(Modifier.fillMaxSize()) {
-        val text = remember { mutableStateOf("Good ?!") }
+        val text = remember { mutableStateOf("Name") }
         Column(horizontalAlignment = Alignment.CenterHorizontally)
-        {   Text(text.value)
+        {
+            Box(Modifier.width(300.dp).align(Alignment.CenterHorizontally).background(Color.Black))
+            { Text(text.value)}
 
             Button( onClick = {text.value = "Good Morning" }) { Text("Morning") }
 
@@ -30,4 +32,3 @@ internal fun AppButton() = AppTheme {
         }
     }
 }
-

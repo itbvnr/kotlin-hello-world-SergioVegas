@@ -9,7 +9,7 @@ import org.jetbrains.compose.reload.DevelopmentEntryPoint
 import cat.itb.m78.exercices.Appp
 import cat.itb.m78.exercices.Appp
 import cat.itb.m78.exercices.theme.AppButton
-
+import cat.itb.m78.exercices.theme.AppScreen
 fun main() = application {
     Window(
         title = "M78Exercices",
@@ -18,7 +18,7 @@ fun main() = application {
     ) {
         window.minimumSize = Dimension(350, 600)
         DevelopmentEntryPoint {
-            AppButton()
+            AppScreen()
         }
     }
 }
