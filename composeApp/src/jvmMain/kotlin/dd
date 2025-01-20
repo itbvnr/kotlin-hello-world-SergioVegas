@@ -1,0 +1,21 @@
+        Column(
+            modifier = Modifier.align(Alignment.Center),
+            horizontalAlignment = Alignment.CenterHorizontally,
+        ) {
+            Image(
+                painter = painterResource(Res.drawable.MyImage),
+                modifier = Modifier.size(100.dp).clip(CircleShape),
+                contentDescription = null
+            )
+            Text("Marta Casserres", fontSize = 35.sp, fontWeight = FontWeight.Bold)
+            Box(Modifier.background(Color.LightGray, RoundedCornerShape(percent = 10)).padding(10.dp)) {
+                Column(
+                    modifier = Modifier.align(Alignment.Center),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                ) {
+                    Text("marta@example.com")
+                    Text("934578484")
+                }
+            }
+        }
+    }

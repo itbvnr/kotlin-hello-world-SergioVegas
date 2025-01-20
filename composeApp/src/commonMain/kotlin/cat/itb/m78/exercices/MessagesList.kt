@@ -53,7 +53,7 @@ internal fun Appp() = AppTheme {
     ) {
         messages.forEach{ message ->
             item {
-                Column(modifier = Modifier.width(350.dp).background(Color.LightGray).clip(shape = RoundedCornerShape(8.dp)).padding(15.dp),) {
+                Column(modifier = Modifier.width(500.dp).background(Color.LightGray).clip(shape = RoundedCornerShape(15.dp)).padding(15.dp),) {
                     Text( message.author)
                     Spacer(modifier = Modifier.height(5.dp))
                     Text(message.body)
@@ -61,7 +61,6 @@ internal fun Appp() = AppTheme {
                 Spacer(Modifier.height(20.dp))
             }
         }
-
     }
 }
 

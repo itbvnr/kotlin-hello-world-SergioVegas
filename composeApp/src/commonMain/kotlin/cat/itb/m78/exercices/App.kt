@@ -50,9 +50,7 @@ internal fun App() = AppTheme {
                     Text("marta@example.com")
                     Text("934578484")
                 }
-
             }
         }
-
     }
 }

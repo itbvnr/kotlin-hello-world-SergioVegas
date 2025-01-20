@@ -7,6 +7,8 @@ import java.awt.Dimension
 import cat.itb.m78.exercices.App
 import org.jetbrains.compose.reload.DevelopmentEntryPoint
 import cat.itb.m78.exercices.Appp
+import cat.itb.m78.exercices.Appp
+import cat.itb.m78.exercices.theme.AppButton
 
 fun main() = application {
     Window(
@@ -16,8 +18,7 @@ fun main() = application {
     ) {
         window.minimumSize = Dimension(350, 600)
         DevelopmentEntryPoint {
-            Appp()
-
+            AppButton()
         }
     }
 }
