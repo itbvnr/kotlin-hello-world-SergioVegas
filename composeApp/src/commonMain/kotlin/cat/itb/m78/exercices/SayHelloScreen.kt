@@ -29,14 +29,16 @@ internal fun AppScreen() = AppTheme {
 
     Box(Modifier.fillMaxSize().background(Color.Black)) {
         val showDialog = remember { mutableStateOf(false)}
-        val text = remember { mutableStateOf(TextFieldValue("")) }
+        val text = remember { mutableStateOf("") }
 
         Box(Modifier.width(400.dp).height(350.dp).background(Color.White).align(Alignment.Center)) {
             Column(Modifier.align(Alignment.Center), verticalArrangement = Arrangement.Top, horizontalAlignment = Alignment.CenterHorizontally)
             {
-                Box(Modifier.width(300.dp).height(60.dp).align(Alignment.CenterHorizontally).border(2.dp, Color.Black, RoundedCornerShape(percent = 10)).padding(10.dp))
+                Box(Modifier.width(300.dp).height(80.dp).align(Alignment.CenterHorizontally).border(2.dp, Color.Black, RoundedCornerShape(percent = 10)).padding(10.dp))
                 {
-                    TextField(text.value, onValueChange = {
+                    TextField(value = text.value,
+                        label={ Text("Name")},
+                        onValueChange = {
                         text.value = it
                     })
                 }
@@ -48,7 +50,7 @@ internal fun AppScreen() = AppTheme {
                     confirmButton ={},
                     text =
                     {
-                        Text("HELLO" + text.value)
+                        Text("HELLO "+ text.value)
                     })
 
             }
