@@ -52,7 +52,6 @@ internal fun AppScreen() = AppTheme {
                     {
                         Text("HELLO "+ text.value)
                     })
-
             }
         }
     }

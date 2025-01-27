@@ -6,6 +6,8 @@ import androidx.compose.ui.window.rememberWindowState
 import java.awt.Dimension
 import org.jetbrains.compose.reload.DevelopmentEntryPoint
 import cat.itb.m78.exercices.AppScreen
+import cat.itb.m78.exercices.AppSecretNumber
+
 fun main() = application {
     Window(
         title = "M78Exercices",
@@ -14,7 +16,7 @@ fun main() = application {
     ) {
         window.minimumSize = Dimension(350, 600)
         DevelopmentEntryPoint {
-            AppScreen()
+            AppSecretNumber()
         }
     }
 }
