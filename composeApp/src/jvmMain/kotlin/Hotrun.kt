@@ -7,6 +7,7 @@ import java.awt.Dimension
 import org.jetbrains.compose.reload.DevelopmentEntryPoint
 import cat.itb.m78.exercices.AppScreen
 import cat.itb.m78.exercices.AppSecretNumber
+import cat.itb.m78.exercices.AppDiceRoller
 
 fun main() = application {
     Window(
@@ -16,7 +17,7 @@ fun main() = application {
     ) {
         window.minimumSize = Dimension(350, 600)
         DevelopmentEntryPoint {
-            AppSecretNumber()
+            AppDiceRoller()
         }
     }
 }

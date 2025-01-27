@@ -26,6 +26,7 @@ internal fun AppSecretNumber() = AppTheme {
         val text = remember { mutableStateOf("") }
         //valor a adivinar
         val textoRespuesta = remember { mutableStateOf("") }
+
         val secretNumber = remember{(0..100).random()}
         // contador de intentos
         val intentos = remember { mutableStateOf(0) }
