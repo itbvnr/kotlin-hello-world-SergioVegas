@@ -9,9 +9,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -30,17 +28,16 @@ import m78exercices.composeapp.generated.resources.dice_5
 import m78exercices.composeapp.generated.resources.dice_6
 
 import org.jetbrains.compose.resources.painterResource
+import kotlin.random.Random
 
 @Composable
 internal fun AppDiceRoller() = AppTheme {
 
     Box(Modifier.fillMaxSize().background(Color.Black)) {
-        val showText = remember { mutableStateOf(false)}
-        val Dice1 = remember{(0..6).random()}
-        val Dice2 = remember{(0..6).random()}
-        val Text1 = remember { mutableStateOf("")}
-        val Text2 = remember { mutableStateOf("")}
-        val imageDices = listOf(dice_1)
+        var text = remember { mutableStateOf("")}
+        var Dice1 by remember{ mutableStateOf (Random.nextInt(0, 6)) }
+        var Dice2 by remember{ mutableStateOf (Random.nextInt(0, 6)) }
+        val imageDices = listOf(Res.drawable.dice_1, Res.drawable.dice_2, Res.drawable.dice_3, Res.drawable.dice_4, Res.drawable.dice_5,Res.drawable.dice_6)
         Box(Modifier.width(600.dp).height(1000.dp).align(Alignment.Center)) {
             Image(
                 painter = painterResource(Res.drawable.tapestry),
@@ -52,11 +49,27 @@ internal fun AppDiceRoller() = AppTheme {
                     painter = painterResource(Res.drawable.title),
                     modifier = Modifier.width(200.dp).height(200.dp),
                     contentDescription = null)
-
-                Button(onClick = { showText.value = true})
+                Button(onClick =
+                {
+                    Dice1 = Random.nextInt(0,6)
+                    Dice2 = Random.nextInt(0,6)
+                }
+                )
                 { Text("Roll the dice")}
 
-               Text()
+                Row(horizontalArrangement = Arrangement.Center)
+                {
+                    Image(
+                        painter = painterResource(imageDices[Dice1]),
+                        modifier = Modifier.width(200.dp).height(200.dp),
+                        contentDescription = null
+                    )
+                    Image(
+                        painter = painterResource(imageDices[Dice2]),
+                        modifier = Modifier.width(200.dp).height(200.dp),
+                        contentDescription = null
+                    )
+                }
             }
         }
     }
