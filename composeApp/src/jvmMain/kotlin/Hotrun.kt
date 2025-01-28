@@ -3,11 +3,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 import androidx.compose.ui.window.rememberWindowState
+import cat.itb.m78.exercices.*
 import java.awt.Dimension
 import org.jetbrains.compose.reload.DevelopmentEntryPoint
-import cat.itb.m78.exercices.AppScreen
-import cat.itb.m78.exercices.AppSecretNumber
-import cat.itb.m78.exercices.AppDiceRoller
 
 fun main() = application {
     Window(
