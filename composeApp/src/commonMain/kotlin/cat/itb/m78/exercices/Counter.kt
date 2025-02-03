@@ -37,4 +37,64 @@ class CounterViewModel : ViewModel() {
     }
 }
 
+@Composable
+fun CounterApp() {
+    val viewModel = viewModel { CounterViewModel() }
+
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(color = Color.LightGray)
+    ) {
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+        ) {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceAround
+            ) {
+                Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                    Text(
+                        text = "Equip 1",
+                        color = Color.Red,
+                        fontSize = 20.sp,
+                    )
+                    Text(
+                        text = "${viewModel.scoreTeam1.value}",
+                    )
+                    Button(
+                        onClick = { viewModel.incrementTeam1() },
+                        shape = RoundedCornerShape(percent = 50),
+                        colors = ButtonDefaults.buttonColors(contentColor = Color.White),
+                        modifier = Modifier.padding(8.dp)
+                    )
+                    {
+                        Text(text = "Puntua!", color = Color.White, fontSize = 20.sp)
+                    }
+
+                }
+                Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                    Text(
+                        text = "Equip 2",
+                        color = Color.Red,
+                        fontSize = 20.sp,
+                    )
+                    Text(
+                        text = "${viewModel.scoreTeam2.value}",
+                    )
+                    Button(
+                        onClick = { viewModel.incrementTeam2() },
+                        shape = RoundedCornerShape(percent = 50),
+                        colors = ButtonDefaults.buttonColors(contentColor = Color.White),
+                        modifier = Modifier.padding(8.dp)
+                    )
+                    {
+                        Text(text = "Puntua!", color = Color.White, fontSize = 20.sp)
+                    }
+                }
+            }
+        }
+    }
+}
 
