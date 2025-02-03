@@ -33,13 +33,14 @@ import kotlin.random.Random
 
 
 
+
 @Composable
 internal fun AppDiceRoller() = AppTheme {
     val scope = rememberCoroutineScope()
-    val snackbarHostState = remember { SnackbarHostState() }
+    val snackbarHostState = remember { mutableStateOf(SnackbarHostState()) }
     Scaffold(
         snackbarHost = {
-            SnackbarHost(hostState = snackbarHostState)
+            SnackbarHost(hostState = snackbarHostState.value)
         },
     ) {
         Box(Modifier.fillMaxSize().background(Color.Black)) {
@@ -75,9 +76,12 @@ internal fun AppDiceRoller() = AppTheme {
                     {
                         Dice1 = Random.nextInt(0, 6)
                         Dice2 = Random.nextInt(0, 6)
-                        if (Dice1 == 6  || Dice2 == 6)
+                        snackbarHostState.value = SnackbarHostState()
+                        if (Dice1 == 5  && Dice2 == 5)
                         {scope.launch {
-                            snackbarHostState.showSnackbar("JACKPOT!")
+                            snackbarHostState.value.showSnackbar(
+                                message = "JACKPOT!",
+                                duration = SnackbarDuration.Indefinite )
                         }}
                     }
                     )
