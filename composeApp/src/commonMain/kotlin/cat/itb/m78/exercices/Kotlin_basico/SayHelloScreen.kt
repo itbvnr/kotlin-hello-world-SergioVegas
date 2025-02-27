@@ -1,8 +1,7 @@
-package cat.itb.m78.exercices
+package cat.itb.m78.exercices.Kotlin_basico
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.AlertDialog
@@ -17,12 +16,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import cat.itb.m78.exercices.theme.AppTheme
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.input.TextFieldValue
-import androidx.compose.ui.unit.sp
-import m78exercices.composeapp.generated.resources.Res
-import org.jetbrains.compose.resources.painterResource
 
 @Composable
 internal fun AppScreen() = AppTheme {

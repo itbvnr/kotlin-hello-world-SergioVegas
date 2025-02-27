@@ -1,4 +1,4 @@
-package cat.itb.m78.exercices
+package cat.itb.m78.exercices.Kotlin_basico
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border

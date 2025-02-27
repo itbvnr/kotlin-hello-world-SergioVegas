@@ -1,0 +1,58 @@
+package cat.itb.m78.exercices.examen
+
+
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+
+@Composable
+fun ResultatScreen(viewModel: ShopViewModel){
+    ResultatScreenView(viewModel)
+}
+
+@Composable
+fun ResultatScreenView(viewModel: ShopViewModel){
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center,
+        modifier = Modifier.fillMaxSize().background(brush)
+    ){
+        Text(
+            text = "Preu de la comanda:",
+            fontSize = 25.sp,
+            fontWeight = FontWeight.Bold
+        )
+
+        Spacer(modifier = Modifier.padding(10.dp))
+
+        Text(
+            text = viewModel.savedNumber.toString(),
+            fontSize = 25.sp,
+            fontWeight = FontWeight.Bold
+        )
+        Spacer(modifier = Modifier.padding(10.dp))
+        Text(
+            text = "Preu de la comanda amb Iva:",
+            fontSize = 25.sp,
+            fontWeight = FontWeight.Bold
+        )
+
+        Spacer(modifier = Modifier.padding(10.dp))
+        Text(
+            text = viewModel.savedNumberIva.toString(),
+            fontSize = 25.sp,
+            fontWeight = FontWeight.Bold
+        )
+    }
+}

@@ -1,9 +1,8 @@
-package cat.itb.m78.exercices
+package cat.itb.m78.exercices.Kotlin_basico
 
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -11,15 +10,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import cat.itb.m78.exercices.theme.AppTheme
 import androidx.compose.ui.graphics.Color
-import org.jetbrains.compose.reload.DevelopmentEntryPoint
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.darkColorScheme
-import androidx.compose.material3.lightColorScheme
-import androidx.compose.runtime.*
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
